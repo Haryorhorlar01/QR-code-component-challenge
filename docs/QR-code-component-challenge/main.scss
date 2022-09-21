@@ -1,0 +1,148 @@
+@import 'breakpoints';
+
+$text-color: #2c384a;
+$text-color-light: #b0afb7;
+$accent-color: #2b7dfa;
+
+
+body {
+  background-color: #d5e1ef;
+  overflow: hidden;
+}
+
+html {
+  font-size: 10px;
+}
+
+img {
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 2rem;
+  margin: 2rem;
+
+  @include responsive(sm) {
+    width: 90%;
+  }
+
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.fab {
+  margin: auto;
+  text-align: center;
+}
+
+.qr {
+  background-color: #fff;
+  width: 100%;
+  max-width: 33rem;
+  max-height: 100%;
+  height: 55rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include responsive(sm) {
+    width: 90%;
+    height: 55rem;
+  }
+
+  @include responsive(xm) {
+    height: 50rem;
+  }
+
+  #{&}__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.social {
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-align: center;
+
+  @include responsive(sm) {
+    font-size: 1rem;
+  }
+
+  #{&}__connect {
+    color: $text-color;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+
+    @include responsive(sm) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  a {
+    padding: .4rem;
+    box-shadow: 6px 6px 10px -1px rgba($color: gray, $alpha: .2);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    
+
+    &:hover {
+      box-shadow: inset 4px 4px 6px -1px rgba($color: #000000, $alpha: .3),
+                  inset -4px -4px 6px -1px rgba($color: #000000, $alpha: .1);
+      
+    }
+  }
+
+  .fab {
+
+    color: $accent-color;
+    margin-top: .4rem;
+    
+  }
+}
+
+.text {
+  padding: 0 4rem;
+  text-align: center;
+
+  @include responsive(xm) {
+    padding: 0rem 2.2rem;
+  }
+
+  #{&}__heading {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+
+    @include responsive(xm) {
+      font-size: 1.7rem;
+    
+    }
+  }
+
+  #{&}__desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: $text-color-light;
+
+    @include responsive(xm) {
+      font-size: 1.4rem;
+    
+    }
+  }
+}
+
+
