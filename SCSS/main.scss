@@ -1,0 +1,280 @@
+@import 'breakpoints';
+
+$text-color: #2c384a;
+$text-color-light: #b0afb7;
+$accent-color: #2b7dfa;
+
+$primary-color: #161414;
+$secondary-color: #fff;
+
+
+body {
+  background-color: #d5e1ef;
+  overflow: hidden;
+  height: 100%;
+  transition: background .5s;
+}
+
+// toggle section
+
+.toggle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border:none;
+  margin-top: 1rem;
+}
+
+
+.toggle::before {
+  content: '\f186';
+  font-family: fontAwesome;
+  color: $text-color;
+}
+
+
+// body toggle
+
+body.dark .toggle::before {
+  content: '\f185';
+  font-family: fontAwesome;
+}
+
+body.dark {
+  background-color: $primary-color;
+}
+
+body.dark .qr {
+  background-color: $primary-color;
+}
+
+body.dark .text__heading, body.dark .social__connect, body.dark .fab {
+  color: $text-color-light;
+}
+
+body.dark a {
+  box-shadow: none;
+}
+
+body.dark img {
+  filter: grayscale(100%);
+}
+
+/*______________________________________________________*/
+
+html {
+  font-size: 10px;
+}
+
+main {
+  min-height: 100vh;
+
+  @include responsive(smm) {
+    min-height: 10vh;
+  }
+}
+
+
+img {
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 1rem;
+  margin: 3.5rem;
+
+
+  @include responsive(sm) {
+    width: 92%;
+    margin-bottom: .1rem;
+  }
+
+  @include responsive (sm360) {
+    margin-top: 2rem;
+  }
+
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.fab {
+  margin: auto;
+  text-align: center;
+}
+
+.qr {
+  background-color: #fff;
+  width: 100%;
+  max-width: 33rem;
+  min-height: 550px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(xm) {
+    max-height: 72% !important;
+  }
+
+  @include responsive(sm) {
+    width: 90%;
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  @include responsive(lg) {
+    height: 53rem;
+  }
+
+  @include responsive(xl) {
+    height: 55rem;
+  }
+
+  
+  
+
+  #{&}__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1.9rem;
+
+    @include responsive(sm360) {
+      margin-top: -2rem;
+    }
+
+    @include responsive(sm411) {
+      margin-top: -2rem;
+    }
+
+    @include responsive(smm) {
+      margin-top: -4rem;
+    }
+
+    @include responsive(smmm) {
+      margin-top: -2rem;
+    }
+
+    @include responsive(xll) {
+      margin-top: -2rem;
+    }
+  }
+}
+
+
+.social {
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-align: center;
+
+  @include responsive(sm) {
+    font-size: 1rem;
+  }
+
+  #{&}__connect {
+    color: $text-color;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+
+    @include responsive(sm) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  a {
+    padding: .4rem;
+    box-shadow: 6px 6px 10px -1px rgba($color: gray, $alpha: .2);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    
+
+    &:hover {
+      box-shadow: inset 4px 4px 6px -1px rgba($color: #000000, $alpha: .3),
+                  inset -4px -4px 6px -1px rgba($color: #000000, $alpha: .1);
+      
+    }
+  }
+
+  .fab {
+
+    color: $accent-color;
+    margin-top: .4rem;
+    
+  }
+}
+
+.text {
+  padding: 0 4rem;
+  text-align: center;
+  margin-top: -2rem;
+
+  @include responsive(xm) {
+    padding: 0rem 2.2rem;
+  }
+
+    @include responsive (lg) {
+      margin-top: -2rem;
+    }
+
+    @include responsive (sm360) {
+      margin-top: .5rem;
+    }
+
+    @include responsive (sm411) {
+      margin-top: .5rem;
+    }
+
+
+
+  #{&}__heading {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+    margin: 1rem 0 1rem 0;
+
+    @include responsive(xm) {
+      font-size: 1.7rem;
+    
+    }
+
+    @include responsive (smmm) {
+      font-size: 1.8rem;
+    }
+
+  }
+
+  #{&}__desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: $text-color-light;
+    margin-bottom: 1rem;
+
+    @include responsive(xm) {
+      font-size: 1.4rem;
+    }
+
+    @include responsive (smmm) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
